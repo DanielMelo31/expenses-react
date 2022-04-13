@@ -2,7 +2,7 @@ import '../../styles/Expenses.css';
 import { ExpenseFilter } from '../ExpenseFilter/ExpenseFIlter';
 import { useState } from 'react';
 import { ExpenseList } from '../Expenses/ExpenseList';
-import { Chart } from '../Chart/Chart';
+import { ExpenseChart } from './ExpenseChart';
 
 const Expenses = (props) => {
 	const [filteredYear, setFilteredYear] = useState('2021');
@@ -22,7 +22,7 @@ const Expenses = (props) => {
 				selectedYear={filteredYear}
 				onFilteredYear={filteredYearHandler}
 			/>
-			<Chart />
+			<ExpenseChart expenses={filteredArray} />
 			<ExpenseList expensesArray={filteredArray} />
 		</div>
 	);
